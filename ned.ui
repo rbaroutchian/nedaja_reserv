@@ -1,0 +1,1181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1334</width>
+    <height>846</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>آمار و ظرفیت های مهمانسراهای ف آماد و پشتیبانی نداجا(سیرجان)</string>
+  </property>
+  <property name="autoFillBackground">
+   <bool>true</bool>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1331</width>
+      <height>851</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>B Nazanin</family>
+      <pointsize>11</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="acceptDrops">
+     <bool>false</bool>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::RightToLeft</enum>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(121, 130, 255);</string>
+    </property>
+    <property name="locale">
+     <locale language="English" country="UnitedStatesMinorOutlyingIslands"/>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="tab_2">
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(121, 130, 255);</string>
+     </property>
+     <attribute name="title">
+      <string>فرم ذخیره محل اقامت در مهمانسرا</string>
+     </attribute>
+     <widget class="QComboBox" name="mehmancombo1_2">
+      <property name="geometry">
+       <rect>
+        <x>1030</x>
+        <y>160</y>
+        <width>201</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>--</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>شهید اسلامی</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>شهید انصاری</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>شهید نصیری</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>دلفین</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>زنده یاد ملکی نیا</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>شهید همتی</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>شهید مولایی</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>شهید فاضل</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>تالار مروارید</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QLabel" name="labelsabt_mehmansara">
+      <property name="geometry">
+       <rect>
+        <x>1240</x>
+        <y>170</y>
+        <width>71</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>B Nazanin</family>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>نام مهمانسرا</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_vahed_khali">
+      <property name="geometry">
+       <rect>
+        <x>900</x>
+        <y>170</y>
+        <width>111</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>B Nazanin</family>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>واحد های قابل رزرو</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="comboBox__vahed">
+      <property name="geometry">
+       <rect>
+        <x>760</x>
+        <y>160</y>
+        <width>131</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="mouseTracking">
+       <bool>false</bool>
+      </property>
+      <property name="tabletTracking">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <property name="minimumContentsLength">
+       <number>1</number>
+      </property>
+      <property name="modelColumn">
+       <number>0</number>
+      </property>
+      <item>
+       <property name="text">
+        <string>--</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>واحد 1</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>واحد 2</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>واحد 3</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>واحد  4</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>واحد 5</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>واحد 6</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>واحد 7</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>واحد 8</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>واحد 9</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>واحد 10</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>واحد 11</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>واحد 12</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QLabel" name="label_zarfiat">
+      <property name="geometry">
+       <rect>
+        <x>580</x>
+        <y>170</y>
+        <width>161</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>B Nazanin</family>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>ظرفیت طبق واحد انتخابی</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_zarfiat">
+      <property name="geometry">
+       <rect>
+        <x>500</x>
+        <y>160</y>
+        <width>71</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="cursorPosition">
+       <number>0</number>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>1160</x>
+        <y>40</y>
+        <width>151</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>B Nazanin</family>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>نام و نام خانوادگی مهمان</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_name">
+      <property name="geometry">
+       <rect>
+        <x>950</x>
+        <y>40</y>
+        <width>201</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="cursorPosition">
+       <number>0</number>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_Tvorod">
+      <property name="geometry">
+       <rect>
+        <x>1240</x>
+        <y>230</y>
+        <width>71</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>B Nazanin</family>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>تاریخ ورود</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_Tkhoroj">
+      <property name="geometry">
+       <rect>
+        <x>940</x>
+        <y>230</y>
+        <width>71</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>B Nazanin</family>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>تاریخ خروج</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_kodmeli">
+      <property name="geometry">
+       <rect>
+        <x>830</x>
+        <y>40</y>
+        <width>91</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>B Nazanin</family>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>کد ملی مهمان</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_kodmeli">
+      <property name="geometry">
+       <rect>
+        <x>620</x>
+        <y>40</y>
+        <width>201</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="cursorPosition">
+       <number>0</number>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_kodp">
+      <property name="geometry">
+       <rect>
+        <x>530</x>
+        <y>40</y>
+        <width>71</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>B Nazanin</family>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>کد پرسنلی</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_kodp">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>40</y>
+        <width>201</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>IBeamCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="cursorPosition">
+       <number>0</number>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_reserv">
+      <property name="geometry">
+       <rect>
+        <x>910</x>
+        <y>280</y>
+        <width>93</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>B Nazanin</family>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string>ثبت رزرو</string>
+      </property>
+     </widget>
+     <widget class="QTableView" name="tableView1">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>360</y>
+        <width>1301</width>
+        <height>411</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_berooz">
+      <property name="geometry">
+       <rect>
+        <x>800</x>
+        <y>280</y>
+        <width>93</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>B Nazanin</family>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string>بروزرسانی</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_dlt">
+      <property name="geometry">
+       <rect>
+        <x>662</x>
+        <y>280</y>
+        <width>121</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>B Nazanin</family>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string>خروح/ حذف رزرو</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_edit">
+      <property name="geometry">
+       <rect>
+        <x>550</x>
+        <y>280</y>
+        <width>93</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>B Nazanin</family>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string>ویرایش</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>320</y>
+        <width>311</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>B Titr</family>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>آمار مهمانسرا/ واحدهای رزرو </string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_shahr">
+      <property name="geometry">
+       <rect>
+        <x>950</x>
+        <y>110</y>
+        <width>55</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>B Nazanin</family>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>شهر مبدا</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_shahr">
+      <property name="geometry">
+       <rect>
+        <x>800</x>
+        <y>100</y>
+        <width>131</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="cursorPosition">
+       <number>0</number>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_tamas">
+      <property name="geometry">
+       <rect>
+        <x>1230</x>
+        <y>110</y>
+        <width>81</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>B Nazanin</family>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>شماره تماس</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_tamas">
+      <property name="geometry">
+       <rect>
+        <x>1030</x>
+        <y>100</y>
+        <width>201</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="cursorPosition">
+       <number>0</number>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_address">
+      <property name="geometry">
+       <rect>
+        <x>720</x>
+        <y>110</y>
+        <width>55</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>B Nazanin</family>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>نشانی</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_address">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>100</y>
+        <width>391</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="cursorPosition">
+       <number>0</number>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_nafarat">
+      <property name="geometry">
+       <rect>
+        <x>400</x>
+        <y>170</y>
+        <width>81</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>B Nazanin</family>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>تعداد نفرات</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_nafarat">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>160</y>
+        <width>81</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="cursorPosition">
+       <number>0</number>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_nerkh">
+      <property name="geometry">
+       <rect>
+        <x>1240</x>
+        <y>280</y>
+        <width>71</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>B Nazanin</family>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>نرخ اتاق</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_nerkh">
+      <property name="geometry">
+       <rect>
+        <x>1030</x>
+        <y>280</y>
+        <width>201</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="cursorPosition">
+       <number>0</number>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_v">
+      <property name="geometry">
+       <rect>
+        <x>1030</x>
+        <y>220</y>
+        <width>201</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="cursorPosition">
+       <number>0</number>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_kh">
+      <property name="geometry">
+       <rect>
+        <x>730</x>
+        <y>220</y>
+        <width>201</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="cursorPosition">
+       <number>0</number>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_dlt_db">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>280</y>
+        <width>121</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>B Nazanin</family>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string>حذف از دیتابیس</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab">
+     <attribute name="title">
+      <string>گزارش </string>
+     </attribute>
+     <widget class="QLabel" name="label__m_search">
+      <property name="geometry">
+       <rect>
+        <x>1210</x>
+        <y>50</y>
+        <width>81</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>B Nazanin</family>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>نام مهمانسرا</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="mehmancombo1_search">
+      <property name="geometry">
+       <rect>
+        <x>990</x>
+        <y>40</y>
+        <width>201</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>--</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>شهید اسلامی</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>شهید انصاری</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>شهید نصیری</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>دلفین</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>زنده یاد ملکی نیا</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>شهید همتی</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>شهید مولایی</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>شهید فاضل</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>تالار مروارید</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QLabel" name="label_Tkhoroj_search">
+      <property name="geometry">
+       <rect>
+        <x>1220</x>
+        <y>160</y>
+        <width>51</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>B Nazanin</family>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>تا تاریخ</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_Tvorod_search">
+      <property name="geometry">
+       <rect>
+        <x>1220</x>
+        <y>110</y>
+        <width>51</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>B Nazanin</family>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>از تاریخ</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_v_search">
+      <property name="geometry">
+       <rect>
+        <x>990</x>
+        <y>100</y>
+        <width>201</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="cursorPosition">
+       <number>0</number>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_kh_search">
+      <property name="geometry">
+       <rect>
+        <x>990</x>
+        <y>160</y>
+        <width>201</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="cursorPosition">
+       <number>0</number>
+      </property>
+     </widget>
+     <widget class="QTableView" name="tableView_search">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>220</y>
+        <width>1301</width>
+        <height>551</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton">
+      <property name="geometry">
+       <rect>
+        <x>842</x>
+        <y>160</y>
+        <width>121</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>B Nazanin</family>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string>جستجو</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_berooz_sch">
+      <property name="geometry">
+       <rect>
+        <x>680</x>
+        <y>160</y>
+        <width>131</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>B Nazanin</family>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string>بروزرسانی</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_kp_sch">
+      <property name="geometry">
+       <rect>
+        <x>890</x>
+        <y>100</y>
+        <width>71</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>B Nazanin</family>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>کد پرسنلی</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_kp_sch">
+      <property name="geometry">
+       <rect>
+        <x>680</x>
+        <y>100</y>
+        <width>201</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="cursorPosition">
+       <number>0</number>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_km_sch">
+      <property name="geometry">
+       <rect>
+        <x>890</x>
+        <y>40</y>
+        <width>51</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>B Nazanin</family>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>کد ملی</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_km_sch">
+      <property name="geometry">
+       <rect>
+        <x>680</x>
+        <y>40</y>
+        <width>201</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="cursorPosition">
+       <number>0</number>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_tozih">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>160</y>
+        <width>561</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>B Nazanin</family>
+        <pointsize>12</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>«با انتخاب یکی از موارد می توانید گزارش رزرو مهمانسرای مورد نظر را پیدا کنید»</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <tabstops>
+  <tabstop>lineEdit_name</tabstop>
+  <tabstop>lineEdit_kodmeli</tabstop>
+  <tabstop>lineEdit_kodp</tabstop>
+  <tabstop>lineEdit_tamas</tabstop>
+  <tabstop>lineEdit_shahr</tabstop>
+  <tabstop>lineEdit_address</tabstop>
+  <tabstop>mehmancombo1_2</tabstop>
+  <tabstop>comboBox__vahed</tabstop>
+  <tabstop>lineEdit_zarfiat</tabstop>
+  <tabstop>lineEdit_nafarat</tabstop>
+  <tabstop>lineEdit_v</tabstop>
+  <tabstop>lineEdit_kh</tabstop>
+  <tabstop>lineEdit_nerkh</tabstop>
+  <tabstop>pushButton_reserv</tabstop>
+  <tabstop>pushButton_berooz</tabstop>
+  <tabstop>pushButton_dlt</tabstop>
+  <tabstop>pushButton_edit</tabstop>
+  <tabstop>tableView1</tabstop>
+  <tabstop>tabWidget</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

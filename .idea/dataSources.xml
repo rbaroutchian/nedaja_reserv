@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="hotel_reservation" uuid="6b83fd14-534c-4f75-99fa-3bfe0b315233">
+    <data-source source="LOCAL" name="reservations" uuid="eba89d01-cad5-4849-8578-f25b99bcbc6d">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:D:\py\py1\Nedaja_S_Reservation\hotel_reservation.db</jdbc-url>
+      <jdbc-url>jdbc:sqlite:D:\py\py1\Nedaja_S_Reservation\reservations.db</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
       <libraries>
         <library>
