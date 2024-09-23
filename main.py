@@ -40,10 +40,10 @@ class ReservationManager:
 
     def setup_connections(self):
         self.ui.mehmancombo1_2.currentIndexChanged.connect(self.update_vahed_combo)
-        self.ui.comboBox__vahed.currentIndexChanged.connect(self.update_zarfiat)
-        self.ui.pushButton_reserv.clicked.connect(self.register_reservation)
+        self.ui.comboBox__vahed.currentIndexChanged.connect(self.update_zarfiat2)
+        self.ui.pushButton_reserv.clicked.connect(self.register_reservation2)
         self.ui.pushButton_berooz.clicked.connect(self.refresh_table)
-        self.ui.pushButton_dlt.clicked.connect(self.delete_record)
+        self.ui.pushButton_dlt.clicked.connect(self.delete_record2)
         self.ui.pushButton_edit.clicked.connect(self.edit_reservation)
         self.ui.pushButton.clicked.connect(self.search_guesthouses)
         self.ui.pushButton_dlt_db.clicked.connect(self.delete_from_db)
@@ -109,6 +109,99 @@ class ReservationManager:
                 self.ui.comboBox__vahed.model().item(index).setEnabled(False)
             else:
                 self.ui.comboBox__vahed.addItem(unit)
+
+    def update_zarfiat2(self):
+        try:
+            unit_capacities = {
+                ("شهید اسلامی", "واحد 1"): 4,
+                ("شهید اسلامی", "واحد 2"): 6,
+                ("شهید اسلامی", "واحد 3"): 6,
+                ("شهید اسلامی", "واحد 4"): 12,
+                ("شهید انصاری", "واحد 1"): 7,
+                ("شهید انصاری", "واحد 2"): 7,
+                ("شهید نصیری", "واحد 1"): 2,
+                ("شهید نصیری", "واحد 2"): 2,
+                ("شهید نصیری", "واحد 3"): 2,
+                ("شهید نصیری", "واحد 4"): 2,
+                ("شهید نصیری", "واحد 5"): 2,
+                ("شهید نصیری", "واحد 6"): 2,
+                ("شهید نصیری", "واحد 7"): 2,
+                ("شهید نصیری", "واحد 8"): 2,
+                ("شهید نصیری", "واحد 9"): 2,
+                ("شهید نصیری", "واحد 10"): 2,
+                ("شهید نصیری", "واحد 11"): 2,
+                ("شهید نصیری", "واحد 12"): 2,
+                ("دلفین", "واحد 1"): 2,
+                ("دلفین", "واحد 2"): 2,
+                ("دلفین", "واحد 3"): 2,
+                ("دلفین", "واحد 4"): 2,
+                ("دلفین", "واحد 5"): 2,
+                ("دلفین", "واحد 6"): 2,
+                ("دلفین", "واحد 7"): 2,
+                ("دلفین", "واحد 8"): 2,
+                ("زنده یاد ملکی نیا", "واحد 1"): 4,
+                ("زنده یاد ملکی نیا", "واحد 2"): 2,
+                ("زنده یاد ملکی نیا", "واحد 3"): 2,
+                ("زنده یاد ملکی نیا", "واحد 4"): 4,
+                ("زنده یاد ملکی نیا", "واحد 5"): 20,
+                ("شهید همتی", "واحد 1"): 2,
+                ("شهید همتی", "واحد 2"): 2,
+                ("شهید همتی", "واحد 3"): 2,
+                ("شهید همتی", "واحد 4"): 2,
+                ("شهید مولایی", "واحد 1"): 4,
+                ("شهید مولایی", "واحد 2"): 3,
+                ("شهید مولایی", "واحد 3"): 2,
+                ("شهید مولایی", "واحد 4"): 4,
+                ("شهید مولایی", "واحد 5"): 3,
+                ("شهید فاضل", "واحد 1"): 1,
+                ("شهید فاضل", "واحد 2"): 2,
+                ("شهید فاضل", "واحد 3"): 2,
+                ("شهید فاضل", "واحد 4"): 2,
+                ("تالار مروارید", "واحد 1"): 4,
+                ("تالار مروارید", "واحد 2"): 4,
+                ("تالار مروارید", "واحد 3"): 3,
+                ("تالار مروارید", "واحد 4"): 3,
+                ("تالار مروارید", "واحد 5"): 3,
+                ("تالار مروارید", "واحد 6"): 2,
+                ("تالار مروارید", "واحد 7"): 2,
+                ("تالار مروارید", "واحد 8"): 4,
+            }
+
+            selected_sara = self.ui.mehmancombo1_2.currentText()
+            selected_vahed = self.ui.comboBox__vahed.currentText()
+
+            if selected_vahed == "--":
+                self.ui.lineEdit_zarfiat.setText("")
+                return
+
+            # دریافت ظرفیت اصلی واحد
+            zarfiat = unit_capacities.get((selected_sara, selected_vahed), 0)
+            self.ui.lineEdit_zarfiat.setText(str(zarfiat))
+
+            # بررسی وضعیت رزرو
+            self.cursor.execute(''' 
+                   SELECT SUM(nafarat) FROM reservations 
+                   WHERE mehman_sara=? AND vahed=? AND is_exited=0 
+                   AND (date_v <= ? AND date_kh >= ?) 
+               ''', (selected_sara, selected_vahed, self.ui.lineEdit_kh.text(), self.ui.lineEdit_v.text()))
+
+            result = self.cursor.fetchone()
+
+            if result and result[0] is not None:
+                total_reserved = result[0]
+                if total_reserved >= zarfiat:
+                    # ظرفیت تکمیل شده
+                    self.ui.lineEdit_zarfiat.setText("0")
+                else:
+                    # ظرفیت باقی‌مانده
+                    remaining_capacity = zarfiat - total_reserved
+                    self.ui.lineEdit_zarfiat.setText(str(remaining_capacity))
+
+
+        except Exception as e:
+            print(f"An error occurred: {e}")
+            # نمایش پیام خطا به کاربر
+            self.ui.lineEdit_zarfiat.setText("خطا در دریافت ظرفیت")
 
     def update_zarfiat(self):
         unit_capacities = {
@@ -188,6 +281,90 @@ class ReservationManager:
             zarfiat = unit_capacities.get((selected_sara, selected_vahed), 0)
 
         self.ui.lineEdit_zarfiat.setText(str(zarfiat))
+
+    def register_reservation2(self):
+        try:
+            mehman_sara = self.ui.mehmancombo1_2.currentText()
+            vahed = self.ui.comboBox__vahed.currentText()
+            zarfiat = self.ui.lineEdit_zarfiat.text()
+            name = self.ui.lineEdit_name.text()
+            kodmeli = self.ui.lineEdit_kodmeli.text()
+            kodp = self.ui.lineEdit_kodp.text()
+            shahr = self.ui.lineEdit_shahr.text()
+            address = self.ui.lineEdit_address.text()
+            nafar = self.ui.lineEdit_nafarat.text()
+            date_v = self.ui.lineEdit_v.text()
+            date_kh = self.ui.lineEdit_kh.text()
+
+            # بررسی تاریخ‌ها
+            if not date_v:
+                raise ValueError("لطفاً تاریخ ورود را وارد کنید.")
+            if not date_kh:
+                raise ValueError("لطفاً تاریخ خروج را وارد کنید.")
+
+            nerkh = self.ui.lineEdit_nerkh.text()
+            selected_row = self.ui.tableView1.selectionModel().currentIndex().row()
+            is_edit_mode = selected_row >= 0
+
+            if is_edit_mode:
+                record_id = self.ui.tableView1.model().index(selected_row, 10).data()
+
+            # چک کردن ظرفیت
+            if zarfiat.isdigit() and int(zarfiat) > 0:
+                if is_edit_mode:
+                    # چک کردن ظرفیت قبل از ویرایش
+                    self.cursor.execute(''' 
+                        SELECT SUM(nafarat) FROM reservations WHERE vahed = ? AND is_exited = 0 AND id != ? 
+                        AND date_v <= ? AND date_kh >= ?
+                    ''', (vahed, record_id, date_kh, date_v))
+                    total_people = self.cursor.fetchone()[0] or 0
+
+                    # بررسی ظرفیت
+                    if total_people + int(nafar) > int(zarfiat):
+                        raise ValueError("ظرفیت کافی برای ویرایش این رزرو وجود ندارد.")
+
+                    # به‌روزرسانی رکورد
+                    self.cursor.execute(''' 
+                        UPDATE reservations
+                        SET mehman_sara=?, vahed=?, zarfiat=?, name=?, kodmeli=?, kodp=?, shahr=?, address=?, nafarat=?, date_v=?, date_kh=?, nerkh=?, is_exited=0
+                        WHERE id=?
+                    ''', (
+                        mehman_sara, vahed, zarfiat, name, kodmeli, kodp, shahr, address, nafar, date_v, date_kh,
+                        nerkh,
+                        record_id))
+
+                else:
+                    # بررسی ظرفیت قبل از ثبت رکورد جدید
+                    self.cursor.execute(''' 
+                        SELECT SUM(nafarat) FROM reservations WHERE vahed = ? AND is_exited = 0 
+                        AND date_v <= ? AND date_kh >= ?
+                    ''', (vahed, date_kh, date_v))
+                    total_people = self.cursor.fetchone()[0] or 0
+
+                    if total_people + int(nafar) > int(zarfiat):
+                        raise ValueError("ظرفیت کافی برای ثبت این رزرو وجود ندارد.")
+
+                    # ثبت رکورد جدید
+                    self.cursor.execute(''' 
+                        INSERT INTO reservations (mehman_sara, vahed, zarfiat, name, kodmeli, kodp, shahr, address, nafarat, date_v, date_kh, nerkh, is_exited)
+                        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0)
+                    ''', (
+                        mehman_sara, vahed, zarfiat, name, kodmeli, kodp, shahr, address, nafar, date_v, date_kh,
+                        nerkh))
+
+                self.conn.commit()
+                self.update_table_view()
+                self.reset_field()
+            else:
+                raise ValueError("ظرفیت صحیح نیست.")
+
+        except Exception as e:
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Critical)
+            msg.setWindowTitle("خطا")
+            msg.setText(f"خطا: {str(e)}")
+            msg.setStandardButtons(QMessageBox.Ok)
+            msg.exec_()
 
     def register_reservation(self):
         mehman_sara = self.ui.mehmancombo1_2.currentText()
@@ -380,6 +557,80 @@ class ReservationManager:
         self.ui.lineEdit_kodp.clear()
         self.ui.lineEdit_v.clear()
         self.ui.lineEdit_kh.clear()
+        self.ui.lineEdit_nafarat.clear()
+
+    def delete_record2(self):
+        try:
+            selected_indexes = self.ui.tableView1.selectionModel().selectedIndexes()
+
+            if selected_indexes:
+                selected_row = selected_indexes[0].row()
+                mehman_sara = self.ui.tableView1.model().index(selected_row, 0).data()
+                vahed = self.ui.tableView1.model().index(selected_row, 1).data()
+                tamas = self.ui.tableView1.model().index(selected_row, 9).data()  # فرض بر اینکه tamas در ستون 9 است
+                record_id = self.ui.tableView1.model().index(selected_row, 10).data()  # فرض بر اینکه id در ستون 10 است
+                exit_date = self.ui.lineEdit_kh.text()  # مقدار تاریخ خروج از lineEdit_kh
+
+                if not exit_date:
+                    msg = QtWidgets.QMessageBox()
+                    msg.setIcon(QtWidgets.QMessageBox.Warning)
+                    msg.setWindowTitle("خطا")
+                    msg.setText("لطفاً تاریخ خروج را وارد کنید.")
+                    msg.setStandardButtons(QtWidgets.QMessageBox.Ok)
+                    msg.exec_()
+                    return  # خروج از تابع
+
+                # نمایش پیغام تایید قبل از حذف
+                confirmation_msg = QtWidgets.QMessageBox()
+                confirmation_msg.setIcon(QtWidgets.QMessageBox.Question)
+                confirmation_msg.setWindowTitle("تأیید خروج")
+                confirmation_msg.setText(
+                    f"آیا مطمئن هستید که می‌خواهید خروج مهمان مربوط به {mehman_sara}، {vahed} را انجام دهید؟")
+                confirmation_msg.setStandardButtons(QtWidgets.QMessageBox.Yes | QtWidgets.QMessageBox.No)
+                confirmation_response = confirmation_msg.exec_()
+
+                if confirmation_response == QtWidgets.QMessageBox.Yes:
+                    # به‌روزرسانی تاریخ خروج و علامت‌گذاری رکورد به عنوان "خارج شده"
+                    self.cursor.execute(''' 
+                        UPDATE reservations
+                        SET date_kh = ?, is_exited = 1, is_reserved = 0  
+                        WHERE id = ? 
+                    ''', (exit_date, record_id))
+
+                    # به‌روزرسانی ظرفیت مربوط به رکورد انتخاب‌شده
+                    self.cursor.execute(''' 
+                        UPDATE reservations
+                        SET zarfiat = zarfiat + ?
+                        WHERE id = ? AND is_exited = 0
+                    ''', (tamas, record_id))
+
+                    self.conn.commit()  # اعمال تغییرات در دیتابیس
+                    self.update_table_view()  # به‌روزرسانی نمایش جدول
+                    self.refresh_table()
+
+                    msg = QtWidgets.QMessageBox()
+                    msg.setIcon(QtWidgets.QMessageBox.Information)
+                    msg.setWindowTitle("خروج موفق")
+                    msg.setText(f"رزرو برای {mehman_sara}، {vahed} با موفقیت به عنوان خارج شده علامت‌گذاری شد.")
+                    msg.setStandardButtons(QtWidgets.QMessageBox.Ok)
+                    msg.exec_()
+
+            else:
+                # اگر هیچ رکوردی انتخاب نشده باشد
+                msg = QtWidgets.QMessageBox()
+                msg.setIcon(QtWidgets.QMessageBox.Warning)
+                msg.setWindowTitle("خطا")
+                msg.setText("لطفاً یک رکورد را از جدول انتخاب کنید.")
+                msg.setStandardButtons(QtWidgets.QMessageBox.Ok)
+                msg.exec_()
+
+        except Exception as e:
+            msg = QtWidgets.QMessageBox()
+            msg.setIcon(QtWidgets.QMessageBox.Critical)
+            msg.setWindowTitle("خطا")
+            msg.setText(f"خطا: {str(e)}")
+            msg.setStandardButtons(QtWidgets.QMessageBox.Ok)
+            msg.exec_()
 
     def delete_record(self):
         try:
