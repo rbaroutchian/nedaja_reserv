@@ -15,6 +15,8 @@ class ReservationManager:
         self.setup_connections()
         self.initialize_database()
         self.ui.tabWidget.setCurrentIndex(0)
+        self.ui.lineEdit_zarfiat.setReadOnly(True)
+
 
         def resource_path(relative_path):
             """بازگشت مسیر صحیح فایل منابع، چه در حالت توسعه و چه در حالت اجرایی."""
